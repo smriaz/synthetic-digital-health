@@ -1,0 +1,80 @@
+schema_version: "1.0"
+dataset_version: "1.0"
+seed: 1337
+
+study:
+  duration_days: 30
+  start_date_utc: "2026-01-01"
+  minute_table: true
+  daily_table: true
+
+population:
+  n_participants: 500
+  age_range: [18, 85]
+  sex_distribution: {female: 0.50, male: 0.48, intersex: 0.02}
+  socioeconomic_index:
+    distribution: "beta"
+    a: 2.0
+    b: 2.5
+  comorbidity_index:
+    distribution: "beta"
+    a: 1.8
+    b: 3.0
+
+sites:
+  n_sites: 6
+  non_iid_strength_0_1: 0.7
+
+devices:
+  vendors:
+    VendorA: 0.45
+    VendorB: 0.35
+    VendorC: 0.20
+  noise_profiles:
+    base_noise_0_1: 0.25
+
+missingness:
+  nonwear:
+    daily_probability: 0.15
+    mean_episode_minutes: 180
+  upload_failure:
+    daily_probability: 0.03
+
+tracks:
+  cardio_rhythm:
+    enabled: true
+    prevalence_0_1: 0.07
+  sleep_circadian:
+    enabled: true
+    shift_worker_rate_0_1: 0.15
+  infection_like:
+    enabled: true
+    episodes_per_year_mean: 1.1
+  stress_like:
+    enabled: true
+    high_stress_days_rate_0_1: 0.10
+  metabolic_like:
+    enabled: true
+    annual_fitness_drift_mean: -0.02
+
+xai:
+  export_latents_public: true
+  explanations:
+    top_k_drivers: 5
+    counterfactuals_per_event: 3
+
+federated:
+  strategies: ["by_site","by_vendor","hybrid"]
+  splits:
+    train: 0.70
+    val: 0.10
+    test: 0.20
+
+agents:
+  enabled: true
+  policy: "heuristic_v1"
+
+export:
+  format: "parquet"
+  write_stats_report: true
+  write_manifest: true

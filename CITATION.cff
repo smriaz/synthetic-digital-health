@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+title: "OSWDH: Open Synthetic Wearables for Digital Health"
+message: "If you use this software, please cite it."
+type: software
+authors:
+  - family-names: "YourLab"
+    given-names: "OSWDH"
+version: "1.0.0"
+date-released: 2026-01-12

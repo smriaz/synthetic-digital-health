@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0",
+  "tables": [
+    "participants.parquet",
+    "devices.parquet",
+    "time_index.parquet",
+    "wearables_features_daily.parquet",
+    "wearables_features_minute.parquet",
+    "sleep_episodes.parquet",
+    "activity_bouts.parquet",
+    "symptoms_surveys.parquet",
+    "clinical_events.parquet",
+    "outcomes.parquet",
+    "missingness_log.parquet",
+    "ground_truth_latents.parquet",
+    "explanations.parquet"
+  ]
+}

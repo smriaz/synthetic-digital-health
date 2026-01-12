@@ -1,0 +1,28 @@
+schema_version: "1.0"
+dataset_version: "1.0"
+seed: 1
+study:
+  duration_days: 7
+  start_date_utc: "2026-01-01"
+  minute_table: true
+  daily_table: true
+population:
+  n_participants: 50
+  age_range: [18, 85]
+  sex_distribution: {female: 0.5, male: 0.48, intersex: 0.02}
+sites:
+  n_sites: 3
+devices:
+  vendors: {VendorA: 0.5, VendorB: 0.3, VendorC: 0.2}
+missingness:
+  nonwear: {daily_probability: 0.1, mean_episode_minutes: 120}
+tracks:
+  cardio_rhythm: {enabled: true, prevalence_0_1: 0.05}
+  sleep_circadian: {enabled: true, shift_worker_rate_0_1: 0.1}
+  infection_like: {enabled: true, episodes_per_year_mean: 1.0}
+  stress_like: {enabled: true, high_stress_days_rate_0_1: 0.08}
+  metabolic_like: {enabled: true, annual_fitness_drift_mean: -0.02}
+xai: {export_latents_public: true, explanations: {top_k_drivers: 5, counterfactuals_per_event: 3}}
+federated: {strategies: ["by_site"], splits: {train: 0.7, val: 0.1, test: 0.2}}
+agents: {enabled: true, policy: "heuristic_v1"}
+export: {format: "parquet", write_stats_report: true, write_manifest: true}

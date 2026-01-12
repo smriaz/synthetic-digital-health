@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "required_keys": [
+    "episode_id",
+    "participant_id",
+    "day_index",
+    "timestamp_utc_ms",
+    "observation",
+    "plan_text",
+    "tools_used",
+    "action",
+    "reward",
+    "safety_flags"
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0",
+  "mechanisms": [
+    {
+      "id": "M_SLEEP_001",
+      "name": "Sleep debt affects resting HR and HRV",
+      "inputs": [
+        "sleep_debt_0_1"
+      ],
+      "outputs": [
+        "resting_hr_bpm",
+        "hrv_rmssd_ms_proxy"
+      ]
+    },
+    {
+      "id": "M_INF_001",
+      "name": "Infection burden affects skin temp and resting HR",
+      "inputs": [
+        "infection_burden_0_1"
+      ],
+      "outputs": [
+        "skin_temp_c",
+        "resting_hr_bpm"
+      ]
+    },
+    {
+      "id": "M_STRESS_001",
+      "name": "Stress load affects HRV and stress index",
+      "inputs": [
+        "stress_load_0_1"
+      ],
+      "outputs": [
+        "hrv_rmssd_ms_proxy",
+        "stress_index"
+      ]
+    },
+    {
+      "id": "M_CARDIO_001",
+      "name": "Arrhythmia propensity increases AF-like event hazard",
+      "inputs": [
+        "arrhythmia_propensity_0_1"
+      ],
+      "outputs": [
+        "af_like"
+      ]
+    }
+  ]
+}

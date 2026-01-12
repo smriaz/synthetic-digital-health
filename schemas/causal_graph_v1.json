@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "nodes": [
+    "sleep_debt",
+    "stress_load",
+    "infection_burden",
+    "arrhythmia_propensity",
+    "wearables_features",
+    "outcomes",
+    "interventions"
+  ],
+  "edges": [
+    [
+      "sleep_debt",
+      "wearables_features"
+    ],
+    [
+      "stress_load",
+      "wearables_features"
+    ],
+    [
+      "infection_burden",
+      "wearables_features"
+    ],
+    [
+      "arrhythmia_propensity",
+      "outcomes"
+    ],
+    [
+      "wearables_features",
+      "outcomes"
+    ],
+    [
+      "interventions",
+      "wearables_features"
+    ],
+    [
+      "interventions",
+      "outcomes"
+    ]
+  ]
+}
